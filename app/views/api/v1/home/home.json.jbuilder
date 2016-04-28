@@ -1,0 +1,1 @@
+json.(@metrics,:total_users)

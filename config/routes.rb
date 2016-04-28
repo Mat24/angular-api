@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  match '*all', to: 'application#cors_preflight_check', via: [:options]
   namespace :api do
     namespace :v1 do
       resources :users, except: [:new, :edit]
+      get 'home' => 'home#index'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
